@@ -1,7 +1,6 @@
 <?php
 include '../../../init.php';
 if(isset($_GET['action'])){
-	//var_dump($mysqli);
 	//把外部文件的内容读取到数组中;
 	$lines=file("../../database/mall.sql");
 	$sqlstr='';
@@ -24,8 +23,10 @@ if(isset($_GET['action'])){
 	//echo $sqlstr;
 	foreach ($sqls as $value){
 		$mysqli->query($value);
-		echo "执行".$value."成功<br>";
+		echo "执行".$value."成功..........<br>";
 	}
+	$data='$mysqli->select_db("mall");';
+	file_put_contents("../../includes/conn.php", $data,FILE_APPEND);
 	//echo "数据库创建成功";
 	rename("step1.php","install.lock");
 	header("location:step3.php");

@@ -11,7 +11,6 @@ define("ROOT_PATH",dirname(__FILE__)."/");
 //通过网站根目录导入smarty类
 include ROOT_PATH.'libs/Smarty.class.php';
 //导入链接数据库文件
-include ROOT_PATH.'application/configs/config.php';
 include ROOT_PATH.'application/includes/conn.php';
 include ROOT_PATH.'application/includes/Tools.class.php';
 include ROOT_PATH.'application/includes/UploadFile.class.php';
