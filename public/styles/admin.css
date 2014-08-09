@@ -1,0 +1,95 @@
+@CHARSET "UTF-8";
+*{
+	margin:0;
+	padding:0;
+}
+dl{
+	border:1px solid #ddd;
+	width:500px;
+	margin:150px auto;	
+	overflow:hidden;
+	padding:0 5px;
+}
+dl dt{	
+	text-align:center;
+	padding:5px 0;
+	font-size:15px;
+	color:#369;
+}
+dl .txt{
+	border:1px solid #ddd;
+	width:90%;
+	margin:auto;
+	display:block;
+	height:25px;
+	transition:all 1s ease 0.1s;
+}
+dl .txt:focus{
+	background:lightyellow;
+	border:1px solid #369;
+	box-shadow:1px 1px 2px #ddd;
+}
+dl dd{
+	margin:5px 0;
+}
+dl .description{
+	height:50px;
+}
+dl  .addBtn{
+	width:107px;
+	height:30px;
+	display:block;
+	margin:auto;
+}
+/*#addBtn{
+	background:url(../images/login_button.png);
+	width:107px;
+	height:30px;
+	display:block;
+	margin:auto;
+	text-indent:200px;
+}*/
+.tproducts{
+	margin-top:50px;
+	border-bottom:1px solid #ddd;
+}
+table .title{
+	background:#f1f1f1;
+}
+#page{	
+	text-align:center;
+}
+.deleteAll{
+	float:right;
+	margin-right:30px;
+}
+.jump{
+	
+}
+.icon-warning-sign{
+	color:red;
+	font-size:35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

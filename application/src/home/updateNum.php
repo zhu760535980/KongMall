@@ -1,0 +1,20 @@
+<?php
+session_start();
+//根据$_GET传的不同的值,进行相应的处理
+//如果是plus就每执行一次加1
+//如果是minus就每执行一次减1；
+if($_GET['action']=='plus'){
+	$_SESSION['cart'][$_GET['id']]->num++;
+	//不能超过库存
+	if($_SESSION['cart'][$_GET['id']]->num>=$_SESSION['cart'][$_GET['id']]->inventory){
+		$_SESSION['cart'][$_GET['id']]->num=$_SESSION['cart'][$_GET['id']]->inventory;
+	}	
+}else if($_GET['action']=='minus'){		
+	$_SESSION['cart'][$_GET['id']]->num--;	
+	//不能小于0;
+	if($_SESSION['cart'][$_GET['id']]->num<=0){
+		$_SESSION['cart'][$_GET['id']]->num=0;
+	}
+}
+header('Location:cart.php');
+?>

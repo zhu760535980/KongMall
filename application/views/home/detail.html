@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link href='../../../public/styles/bootstrap.min.css' rel="stylesheet">
+<link href='../../../public/styles/bootstrap-theme.css' rel="stylesheet">
+<link href='../../../public/styles/font-awesome.min.css' rel="stylesheet">
+<link href='../../../public/styles/detail.css' rel="stylesheet">
+</head>
+<body>
+<div id="detail">
+	<div id="left">
+		<img src="../../../public/uploads/{$oneProduct->pix}">
+		<ul>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+	</div>
+	<dl id="right">
+	<form method="post" action="cart.php">
+		<input type="hidden" name="id" value="{$oneProduct->id}">
+		<dt class="text-success"><input type="text" value="{$oneProduct->name}" class="form-control"></dt>
+		<dd><input type="text" value="{$oneProduct->price}" class="form-control"></dd>
+		<dd><input type="text" value="{$oneProduct->inventory}" class="form-control"></dd>
+		<dd><input type="submit" class="btn btn-danger icon-shopping-cart cart" value="放入购物车"></a></dd>
+	</form>
+	</dl>	
+</div>
+</body>
+</html>

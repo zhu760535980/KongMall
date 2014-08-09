@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link href='../../../public/styles/bootstrap.min.css' rel="stylesheet">
+<link href='../../../public/styles/bootstrap-theme.css' rel="stylesheet">
+<link href='../../../public/styles/font-awesome.min.css' rel="stylesheet">
+</head>
+<body>
+<table class="table table-bordered">
+<tr>
+	<th>商品名称</th>
+	<th>增|数量|</th>	
+	<th>商品单价</th>
+	<th>商品价格</th>
+	<th>操作</th>	
+</tr>
+{if $cart}
+{foreach $cart as $key=>$value}
+<tr>
+	<td>{$value->name}</td>
+	<td>
+		<a class="btn btn-primary icon-arrow-up" onclick='location.href="updateNum.php?action=plus&id={$value->id}"'></a>
+			[{$value->num}]
+		<a class="btn btn-primary icon-arrow-down" onclick='location.href="updateNum.php?action=minus&id={$value->id}"'></a>
+	</td>	
+	<td>{$value->price}</td>
+	<td>{$value->price*$value->num}</td>
+	<td><a href="removeProduct.php?action=removeOne&id={$value->id}" class="btn btn-danger">移除商品</a></td>	
+</tr>
+{/foreach}
+<tr>
+	<td align="right" colspan="5">
+	<a href="removeProduct.php?action=removeAll" class="btn btn-info">清空购物车</a>&nbsp;&nbsp;
+	<a href="home.php" class="btn btn-warning">继续购物</a>
+	<a href="order.php?action=placeOrder" class="btn btn-success">提交订单</a>
+	总计：{$sum}
+	</td>
+</tr>
+{else}
+<tr>
+	<td>暂无商品</td>
+</tr>
+{/if}
+</table>
+</body>
+</html>

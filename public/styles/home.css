@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+*{
+	margin:0;
+	padding:0;
+}
+#page{
+	text-align:center;
+}
+.productList{
+	border:1px solid green;
+	width:85%;
+	margin:100px auto;
+	list-style:none;
+	overflow:hidden;
+}
+.productList li{	
+	float:left;
+	width:202px;	
+	margin:2px;
+	border:1px solid orange;
+}
+.productList li img{
+	width:150px;
+	height:200px;
+}
+.productList li dl dd{
+	text-align:center;
+	margin:2px 0;
+}
+.productList .take{
+	height:25px;
+	line-height:13px;
+}
