@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link href='../../../public/styles/admin.css' rel="stylesheet">
+<link href='../../../public/styles/bootstrap.min.css' rel="stylesheet">
+<link href='../../../public/styles/font-awesome.min.css' rel="stylesheet">
+<script src="../../../public/scripts/jquery-1.10.2.js"></script>
+<script src="../../../public/scripts/bootstrap.js"></script>
+<script src="../../../public/scripts/admin.js"></script>
+</head>
+<body>
+<!--modal开始  -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+	<div class="modal-dialog">
+		<div class="modal-content">
+				<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">确定要删除吗！</h4>
+				</div>
+				<div class="modal-body">
+					<span class="icon-warning-sign"></span>
+				</div>
+				<div class="modal-footer">
+						<a href="" type="button" class="btn btn-default btn-success"  id="btrue">确定</a>
+						<a type="button" class="btn btn-primary btn-danger" data-dismiss="modal"  id="bfalse">取消</a>
+				</div>
+		</div>
+	</div>
+</div>
+<!--modal结束  -->
+<table class="table tproducts">
+<form action="delete.php?action=deleteAll" method="post">
+	<tr class="title">
+		<th>商品名称</th>
+		<th>商品价格</th>
+		<th>商品库存</th>
+		<th>商品描述</th>
+		<th>添加时间</th>
+		<th>操作</th>
+		<th><input type="checkbox" id="selectBar">全选</th>
+	</tr>
+		{if $products}
+		{foreach $products as $key=>$value}
+		<tr>
+			<td>{$value->name}</td>
+			<td>{$value->price}</td>
+			<td>{$value->inventory}</td>
+			<td>{$value->description}</td>
+			<td>{$value->addTime}</td>
+			<td>
+				<a href='update.php?action=delete&id={$value->id}'>修改</a>||
+				<a href='delete.php?action=delete&id={$value->id}' class="confirm-delete">删除</a>
+			</td>
+			<td><input type="checkbox" value="{$value->id}" name="selectAll[]"></td>
+		</tr>
+		{/foreach}
+		<tr>
+			<td colspan="7"><a href='addProduct.php' class="btn btn-primary jump">添加商品</a><input type="submit" value="全部删除" class="btn btn-primary deleteAll"></td>
+		</tr>
+		{else}
+		<tr><td colspan="6">暂无商品</td></tr>
+		{/if}
+</form>	
+</table>
+<div id="page">{$page}</div>
+</body>
+</html>

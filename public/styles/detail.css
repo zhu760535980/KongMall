@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+*{
+	margin:0;
+	padding:0;
+}
+ul{
+	list-style:none;
+}
+#detail{
+	width:550px;
+	border:1px solid #ddd;
+	margin:50px auto;
+	position:relative;
+}
+#detail #left{	
+	overflow:hidden;
+	margin:5px 0 5px 5px;
+	width:180px;
+	text-align:center;
+}
+#detail #left img{
+	width:150px;
+	height:200px;
+}
+#detail #left ul{
+	margin-top:5px;
+	margin-left:5px;
+}
+#detail #left li{
+	margin-left:2px;
+	float:left;
+	width:40px;
+	height:40px;
+	border:1px solid orange;
+}
+#detail #right{	
+	position:absolute;
+	right:5px;
+	top:5px;
+	width:300px;
+	border:1px solid #ddd;
+}
+
+#detail #right dt{
+	text-align:center;
+	border-bottom:1px solid #ddd;
+	margin:15px 0;
+}
+#detail #right dd{
+	text-align:center;
+	margin:15px 0;
+	border-bottom:1px solid #ddd;
+	padding-bottom:15px;
+}
+#detail  .cart{
+	margin:15px;
+	font-size:18px;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
